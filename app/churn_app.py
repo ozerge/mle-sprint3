@@ -1,7 +1,7 @@
 """FastAPI-приложение для модели оттока."""
 
 from fastapi import FastAPI, Body
-from fast_api_handler import FastApiHandler
+from .fast_api_handler import FastApiHandler
 
 """
 Пример запуска из директории mle-sprint3/app:
