@@ -18,6 +18,17 @@ app = FastAPI()
 # создаём обработчик запросов для API
 app.handler = FastApiHandler()
 
+# Корневой эндпоинт для проверки работы API
+@app.get("/")
+async def health_check():
+    return {
+        "status": "API is running",
+        "endpoints": {
+            "docs": "/docs",
+            "predict": "/api/churn/"
+        }
+    }
+
 # ваш код функции-обработчика get_prediction_for_item здесь
 @app.post("/api/churn/") 
 def get_prediction_for_item(user_id: str, model_params: dict):
